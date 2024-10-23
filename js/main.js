@@ -18,9 +18,7 @@ let counter = setInterval(() => {
     clearInterval(counter);
   }
 }, 1000);
-
 // *******************************************************
- 
 let progressSpans = document.querySelectorAll(".the-progress span");
 let section = document.querySelector(".our-skills");
 
