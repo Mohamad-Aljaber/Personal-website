@@ -9,29 +9,34 @@ let counter = setInterval(() => {
 
   document.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
   document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
-  document.querySelector(".minutes").innerHTML = minutes < 10 ? `0${minutes}` : minutes;
-  document.querySelector(".seconds").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+  document.querySelector(".minutes").innerHTML =
+    minutes < 10 ? `0${minutes}` : minutes;
+  document.querySelector(".seconds").innerHTML =
+    seconds < 10 ? `0${seconds}` : seconds;
 
   if (dateDiff < 0) {
     clearInterval(counter);
   }
 }, 1000);
+
+// *******************************************************
+ 
 let progressSpans = document.querySelectorAll(".the-progress span");
 let section = document.querySelector(".our-skills");
 
 let nums = document.querySelectorAll(".stats .number");
 let statsSection = document.querySelector(".stats");
-let started = false; 
+let started = false;
 
 window.onscroll = function () {
   if (window.scrollY >= section.offsetTop - 250) {
-    progressSpans.forEach((span) => {
+    progressSpans.forEach(span => {
       span.style.width = span.dataset.width;
     });
   }
   if (window.scrollY >= statsSection.offsetTop) {
     if (!started) {
-      nums.forEach((num) => startCount(num));
+      nums.forEach(num => startCount(num));
     }
     started = true;
   }
